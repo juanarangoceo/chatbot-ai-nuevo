@@ -1,14 +1,14 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
-from openai import OpenAI
+import openai
 from dotenv import load_dotenv
 
 # Cargar variables de entorno
 load_dotenv()
 
 # Configurar OpenAI
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # Inicializar Flask
 app = Flask(__name__)
@@ -40,7 +40,7 @@ def chat():
         messages.append({"role": "user", "content": message})
 
         # Llamar a la API de OpenAI
-        response = client.chat.completions.create(
+        response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=messages,
             max_tokens=150,
