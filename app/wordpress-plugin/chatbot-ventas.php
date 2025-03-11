@@ -21,7 +21,7 @@ define('CHATBOT_VENTAS_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 // Definir la URL del servidor si no está definida
 if (!defined('CHATBOT_SERVER_URL')) {
-    define('CHATBOT_SERVER_URL', 'https://chatbot-open-ai.onrender.com/chat');
+    define('CHATBOT_SERVER_URL', 'https://chatbot-ai-nuevo.onrender.com/chat');
 }
 
 // Inicialización del plugin
